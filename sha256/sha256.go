@@ -1,8 +1,12 @@
 package sha256
 
+type Digest struct {
+	s [8]uint32
+}
+
 // New creates a new, initialised SHA256 digest
-func New() [8]uint32 {
-	return [8]uint32{0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a, 0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19}
+func New() Digest {
+	return Digest{s: [8]uint32{0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a, 0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19}}
 }
 
 /*----------------------------------------------------
